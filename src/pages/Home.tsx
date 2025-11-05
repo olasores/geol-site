@@ -7,13 +7,12 @@ export default function Home() {
       <div
         className="relative h-screen flex items-center justify-center bg-cover bg-center"
         style={{
-          backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://images.pexels.com/photos/8828592/pexels-photo-8828592.jpeg?auto=compress&cs=tinysrgb&w=1920)',
+          // use the local image from public/assets as the hero background
+          backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/assets/dino.jpg')",
         }}
       >
         <div className="text-center px-4 max-w-4xl">
-          <div className="flex justify-center mb-6">
-            <Bone className="w-16 h-16 text-amber-500" />
-          </div>
+         
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
             The Bone Wars
           </h1>
@@ -30,7 +29,7 @@ export default function Home() {
         </div>
       </div>
 
-      <section className="py-20 px-4">
+      {/* <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-stone-900 mb-6">
@@ -84,7 +83,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }
