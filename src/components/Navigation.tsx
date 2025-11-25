@@ -1,11 +1,23 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -35,14 +47,13 @@ export default function Navigation() {
               About
             </Link>
 
-            <div
-              className="relative"
-              onMouseEnter={() => setIsDropdownOpen(true)}
-              onMouseLeave={() => setIsDropdownOpen(false)}
-            >
-              <button className="flex items-center space-x-1 text-sm font-medium text-stone-100 hover:text-amber-400 transition-colors">
+            <div className="relative" ref={dropdownRef}>
+              <button
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                className="flex items-center space-x-1 text-sm font-medium text-stone-100 hover:text-amber-400 transition-colors"
+              >
                 <span>Geologists</span>
-                <ChevronDown className="w-4 h-4" />
+                <ChevronDown className={`w-4 h-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
 
               {isDropdownOpen && (
@@ -50,12 +61,14 @@ export default function Navigation() {
                   <Link
                     to="/geologist/edward-cope"
                     className="block px-4 py-3 text-sm text-stone-100 hover:bg-amber-600 hover:text-white transition-colors"
+                    onClick={() => setIsDropdownOpen(false)}
                   >
                     Edward Drinker Cope
                   </Link>
                   <Link
                     to="/geologist/othniel-marsh"
                     className="block px-4 py-3 text-sm text-stone-100 hover:bg-amber-600 hover:text-white transition-colors"
+                    onClick={() => setIsDropdownOpen(false)}
                   >
                     Othniel Charles Marsh
                   </Link>
@@ -70,6 +83,15 @@ export default function Navigation() {
               }`}
             >
               Outcomes
+            </Link>
+
+            <Link
+              to="/references"
+              className={`text-sm font-medium transition-colors ${
+                isActive('/references') ? 'text-amber-500' : 'text-stone-100 hover:text-amber-400'
+              }`}
+            >
+              References
             </Link>
           </div>
 
@@ -127,6 +149,15 @@ export default function Navigation() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Outcomes
+              </Link>
+              <Link
+                to="/references"
+                className={`text-sm font-medium ${
+                  isActive('/references') ? 'text-amber-500' : 'text-stone-100'
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                References
               </Link>
             </div>
           </div>

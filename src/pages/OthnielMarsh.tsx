@@ -1,4 +1,4 @@
-import { Award, Building2, Microscope } from 'lucide-react';
+import { Award, Building2 } from 'lucide-react';
 
 export default function OthnielMarsh() {
   return (
@@ -13,6 +13,36 @@ export default function OthnielMarsh() {
           </p>
         </div>
 
+        <div className="grid md:grid-cols-2 gap-8 mb-12 items-start">
+          <div className="rounded-2xl overflow-hidden shadow-lg h-fit">
+            <img
+              src="/assets/copemarsh.jpg"
+              alt="Othniel Charles Marsh"
+              className="w-full h-auto object-cover"
+            />
+          </div>
+          
+          <div className="bg-white rounded-2xl shadow-xl p-8 h-fit">
+            <h2 className="text-3xl font-bold text-stone-900 mb-4">About Othniel Marsh</h2>
+            <div className="space-y-4 text-stone-700 leading-relaxed">
+              <p>
+                Othniel Charles Marsh was born in 1831 in Lockport, New York. Unlike his rival Cope, Marsh
+                received formal education, graduating from Yale College in 1860 and later studying paleontology
+                in Europe.
+              </p>
+              <p>
+                In 1866, Marsh became the first Professor of Paleontology in the United States at Yale University.
+                With financial support from his uncle George Peabody, the Peabody Museum of Natural History was established at Yale,
+                giving Marsh an institutional base that proved crucial during the Bone Wars.
+              </p>
+              <p>
+                Marsh was methodical and strategic, using his institutional resources and political connections to great effect.
+                He employed teams of fossil collectors and maintained a network of informants across the American West.
+              </p>
+            </div>
+          </div>
+        </div>
+
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           <div className="bg-white rounded-xl shadow-lg p-6">
             <div className="text-4xl font-bold text-blue-600 mb-2">80+</div>
@@ -25,38 +55,6 @@ export default function OthnielMarsh() {
           <div className="bg-white rounded-xl shadow-lg p-6">
             <div className="text-4xl font-bold text-blue-600 mb-2">$100k+</div>
             <div className="text-stone-600">Personal fortune spent on fossil expeditions</div>
-          </div>
-        </div>
-
-        <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 mb-8">
-          <div className="flex items-start gap-4 mb-6">
-            <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-              <Microscope className="w-6 h-6 text-blue-600" />
-            </div>
-            <div>
-              <h2 className="text-3xl font-bold text-stone-900 mb-4">Biography</h2>
-            </div>
-          </div>
-
-          <div className="space-y-4 text-lg text-stone-700 leading-relaxed">
-            <p>
-              Othniel Charles Marsh was born in 1831 in Lockport, New York. Unlike his rival Cope, Marsh
-              received formal education, graduating from Yale College in 1860 and later studying paleontology
-              in Europe. His uncle, George Peabody, was a wealthy philanthropist who provided substantial
-              financial support for his scientific career.
-            </p>
-            <p>
-              In 1866, Marsh became the first Professor of Paleontology in the United States at Yale University.
-              With funding from his uncle, the Peabody Museum of Natural History was established at Yale,
-              giving Marsh an institutional base that Cope lacked. This advantage proved crucial during
-              the Bone Wars.
-            </p>
-            <p>
-              Marsh was methodical and strategic, using his institutional resources and political connections
-              to great effect. He employed teams of fossil collectors and maintained a network of informants
-              across the American West, allowing him to learn of new fossil sites quickly and secure them
-              before his competitors.
-            </p>
           </div>
         </div>
 

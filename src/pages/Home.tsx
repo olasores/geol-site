@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Bone } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export default function Home() {
   return (

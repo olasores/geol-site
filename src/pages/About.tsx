@@ -3,6 +3,13 @@ import { Layers, Map, Users } from 'lucide-react';
 export default function About() {
   return (
     <div className="min-h-screen bg-stone-50 pt-16">
+      <div
+        className="relative h-96 bg-cover bg-center"
+        style={{
+          backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/assets/abouthero.jpg')",
+        }}
+      />
+
       <div className="max-w-5xl mx-auto px-4 py-16">
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-6xl font-bold text-stone-900 mb-6">

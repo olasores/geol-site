@@ -1,4 +1,4 @@
-import { BookOpen, Star, AlertCircle } from 'lucide-react';
+import { Star, AlertCircle } from 'lucide-react';
 
 export default function EdwardCope() {
   return (
@@ -13,6 +13,36 @@ export default function EdwardCope() {
           </p>
         </div>
 
+        <div className="grid md:grid-cols-2 gap-8 mb-12 items-start">
+          <div className="rounded-2xl overflow-hidden shadow-lg h-fit">
+            <img
+              src="/assets/edwin.webp"
+              alt="Edward Drinker Cope"
+              className="w-full h-auto object-cover"
+            />
+          </div>
+          
+          <div className="bg-white rounded-2xl shadow-xl p-8 h-fit">
+            <h2 className="text-3xl font-bold text-stone-900 mb-4">About Edward Cope</h2>
+            <div className="space-y-4 text-stone-700 leading-relaxed">
+              <p>
+                Edward Drinker Cope was born into a wealthy Quaker family in Philadelphia in 1840.
+                A child prodigy, he demonstrated exceptional talent for natural sciences from an early age,
+                publishing his first scientific paper at just 17 years old.
+              </p>
+              <p>
+                Cope was largely self-taught, never completing a formal university degree, yet he became one of
+                the most prolific naturalists in American history. His work spanned multiple disciplines including
+                herpetology, ichthyology, and paleontology.
+              </p>
+              <p>
+                Known for his brilliant mind and photographic memory, Cope could recall vast amounts of anatomical
+                detail. His competitive nature led to conflicts with other scientists, most notably with Othniel Charles Marsh.
+              </p>
+            </div>
+          </div>
+        </div>
+
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           <div className="bg-white rounded-xl shadow-lg p-6">
             <div className="text-4xl font-bold text-emerald-600 mb-2">1,400+</div>
@@ -25,36 +55,6 @@ export default function EdwardCope() {
           <div className="bg-white rounded-xl shadow-lg p-6">
             <div className="text-4xl font-bold text-emerald-600 mb-2">17</div>
             <div className="text-stone-600">Age when he published his first scientific paper</div>
-          </div>
-        </div>
-
-        <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 mb-8">
-          <div className="flex items-start gap-4 mb-6">
-            <div className="flex-shrink-0 w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center">
-              <BookOpen className="w-6 h-6 text-emerald-600" />
-            </div>
-            <div>
-              <h2 className="text-3xl font-bold text-stone-900 mb-4">Biography</h2>
-            </div>
-          </div>
-
-          <div className="space-y-4 text-lg text-stone-700 leading-relaxed">
-            <p>
-              Edward Drinker Cope was born into a wealthy Quaker family in Philadelphia in 1840.
-              A child prodigy, he demonstrated exceptional talent for natural sciences from an early age,
-              publishing his first scientific paper at just 17 years old.
-            </p>
-            <p>
-              Cope was largely self-taught, never completing a formal university degree, yet he became one of
-              the most prolific naturalists in American history. His work spanned multiple disciplines including
-              herpetology, ichthyology, and paleontology, though he is best remembered for his contributions
-              to vertebrate paleontology.
-            </p>
-            <p>
-              Known for his brilliant mind and photographic memory, Cope could recall vast amounts of anatomical
-              detail and geological information. However, his quick temper and competitive nature often led to
-              conflicts with other scientists, most notably with his former friend Othniel Charles Marsh.
-            </p>
           </div>
         </div>
 
